@@ -2,7 +2,7 @@ version: '3.0'
 services:
   json-server:
     image: vimagick/json-server
-    command: -H 0.0.0.0 -p 8080 -w /config/db.json
+    command: -h 0.0.0.0 -p 8080 -w /config/db.json
     ports:
       - "8080:8080"
     volumes:
