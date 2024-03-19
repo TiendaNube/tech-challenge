@@ -15,12 +15,12 @@ para isso vamos utilizar algumas API's disponíveis nesse repositório.
   	* Data de Expiração
   	* CVV do cartão
 
-* Ao criar uma transação, também deve ser criado um recebível do merchant (payables), com as seguintes regras de negócio:
-  * Transação **Debit card**:
+* Ao criar uma transação, também deve ser criado um **recebível** do merchant (**payables**), com as seguintes regras de negócio:
+  * **Debit card**:
       * O payable deve ser criado com **status = paid**, indicando que o merchant irá receber o valor
       * O payable deve ser criado com a data igual a data de criação (D + 0).
 
-  * Transação **Credit card**:
+  * **Credit card**:
       * O payable deve ser criado com **status = waiting_funds**, indicando que o merchant irá receber esse valor no futuro
       * O Payable deve ser criado com a data igual a data de criação da transação  + 30 dias (D + 30)
 
