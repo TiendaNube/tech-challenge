@@ -15,11 +15,11 @@ We need an endpoint that calculates the merchant's total Payables by period, the
     * The payment method: **debit_card** or **credit_card**
     * The card number, cardholder name, card expiration date and card verification code (CVV).
 3. As the card number is sensitive information, we must store and return only the last 4 digits of the card.
-4. Create merchant receivables (payables), following the business requirements:
-    * **Debit card** transaction:
+4. Create merchant **receivables (payables)**, following the business requirements:
+    * **Debit card**:
       * The payable must be created with **status = paid,** indicating that the merchant has already received this amount.
       * The payable must be created with the payment date equal to the date of creation of the transaction (D + 0).
-    * **Credit card** transaction:
+    * **Credit card**:
       * The payable must be created with **status = waiting_funds**, indicating that the merchant will receive this amount in the future.
       * The payable must be created with the payment date equal to the date of creation of the transaction + 30 days (D + 30).
 5. When the payables are created, the processing fee must be discounted. Consider 2% of fee for **debit card** transactions and 4% for **credit card** transactions. Example: when a merchant processes $ 100,00 from a credit card transaction, he will receive $ 96,00. 
